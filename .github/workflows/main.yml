@@ -100,7 +100,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/main
           make clean
-          make package SIDELOADING=1 THEOSFLAGS="CFLAGS=-Wno-vla-cxx-extension"
+          make package SIDELOADING=1 ADDITIONAL_CFLAGS="-Wno-vla-cxx-extension" ADDITIONAL_OBJCFLAGS="-Wno-vla-cxx-extension" ADDITIONAL_CPPFLAGS="-Wno-vla-cxx-extension"
         env:
           THEOS: ${{ github.workspace }}/theos
 
